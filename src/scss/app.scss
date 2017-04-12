@@ -31,6 +31,8 @@ h1, h2, h3, h4, h5, h6 {
     font-weight:300;
 }
 
+a:hover { text-decoration: none; color: rgba(255, 255, 255, 0.9); }
+
 .header {
     color: $primary-color;
     font-weight: 300;
@@ -41,6 +43,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .chip {
   background-color: #c8d3d8;
+  color: #232323;
+}
+
+.chip a {
   color: #232323;
 }
 
