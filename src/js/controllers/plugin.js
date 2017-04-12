@@ -129,6 +129,10 @@ angular.module('app').controller("PluginController", ["$scope", "Kong", "$locati
             if (attrs.type === 'table') {
                 if (attrs.schema.flexible) {
                     angular.forEach(obj[key], function(value, sub_key) {
+                        if(typeof(value)!=='object'){
+                          delete obj[key][sub_key];
+                          return;
+                        }
                         beforeSave(obj[key][sub_key], schema[key].schema.fields)
                     });
                 } else {

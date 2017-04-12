@@ -91,6 +91,7 @@
                     </div>
 
                     <div ng-if="attr.type==='table' && attr.schema.flexible" ng-repeat="(sub_field, sub_attr) in plugin.config[field] track by $index">
+                      <div ng-if="!!plugin.config[field][sub_field]">
                         <div class="input-field col s12">
                             <div style="position:absolute; right:0;">
                                 <a class="btn-floating waves-effect waves-light red" ng-click="removeFormObject(field, sub_field)">
@@ -101,10 +102,16 @@
                             <label class="active">{{field | firstLetterUp}} object name</label>
                         </div>
                         <div class="input-field col s12" ng-repeat="(sub_sub_field, sub_sub_attr) in attr.schema.fields">
-                            <input type="text" class="validate" ng-model="plugin.config[field][sub_field][sub_sub_field]" id="{{field}}-{{sub_field}}-{{sub_sub_field}}" />
+                            <div ng-if="attr.schema.fields[sub_sub_field].multiline">
+                                <textarea class="validate materialize-textarea" ng-model="plugin.config[field][sub_field][sub_sub_field]" id="{{field}}-{{sub_field}}-{{sub_sub_field}}"></textarea>
+                            </div>
+                            <div ng-if="!attr.schema.fields[sub_sub_field].multiline">
+                                <input type="text" class="validate" ng-model="plugin.config[field][sub_field][sub_sub_field]" id="{{field}}-{{sub_field}}-{{sub_sub_field}}" />
+                            </div>
                             <label for="{{field}}-{{sub_field}}-{{sub_sub_field}}" ng-class="{active:plugin.config[field][sub_field][sub_sub_field]}">{{field | firstLetterUp}} - {{sub_field | firstLetterUp}} - {{sub_sub_field | firstLetterUp}}</label>
                             <app-field-error error="error['config.'+field+'.'+sub_field+'.'+sub_sub_field]"></app-field-error>
                         </div>
+                      </div>
                     </div>
                     <div ng-if="attr.type==='table' && attr.schema.flexible" class="input-field col s12">
                         <div style="position:absolute; right:0;">
