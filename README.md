@@ -8,7 +8,7 @@ and services such as requests routing, authentication, rate limiting, etc.
 
 ## Compatibility
 
-Current version of Kong dashboard is compatible with Kong 0.6.x, 0.7.x, 0.8.x and 0.9.x.
+Current version of Kong dashboard is compatible with Kong 0.6.x, 0.7.x, 0.8.x, 0.9.x, 0.10.x.
 
 ## Presentation
 
