@@ -5,6 +5,16 @@ $header-color: #222D37;
 $footer-color: #222D37;
 $secondary-color: #76868F;
 
+.disabled,
+[disabled],
+input:disabled+label {
+    color: rgba(255,255,255,0.3) !important;
+}
+
+input.select-dropdown:disabled{
+    border-bottom: 1px solid rgba(255,255,255,0.3) !important;
+}
+
 body {
     background-color: #1A242D;
     color: #efefef;
