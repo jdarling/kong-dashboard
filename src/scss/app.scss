@@ -1,6 +1,13 @@
 @import './node_modules/materialize-css/sass/materialize.scss';
 
+$primary-color: #E1EBF1;
+$header-color: #222D37;
+$footer-color: #222D37;
+$secondary-color: #76868F;
+
 body {
+    background-color: #1A242D;
+    color: #efefef;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -19,6 +26,11 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
     margin-top:50px;
     margin-bottom:50px;
+    border-bottom: 1px solid #2F3E47;
+}
+
+nav {
+  background-color: $header-color;
 }
 
 nav i.material-icons {
@@ -76,6 +88,9 @@ a {
 }
 
 footer {
-    background-color: $primary-color;
+  background-color: $footer-color;
+  border-top: 1px solid #2F3E47;
+  color: $secondary-color;
+  font-size: 0.85rem;
+  font-weight: 500;
 }
-
