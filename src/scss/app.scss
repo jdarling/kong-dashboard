@@ -4,6 +4,7 @@ $primary-color: #E1EBF1;
 $header-color: #222D37;
 $footer-color: #222D37;
 $secondary-color: #76868F;
+$background-color: #1A242D;
 
 .disabled,
 [disabled],
@@ -19,8 +20,12 @@ input.select-dropdown:disabled{
     border-bottom: 1px solid rgba(255,255,255,0.3) !important;
 }
 
+.modal {
+  background-color: $background-color;
+}
+
 body {
-    background-color: #1A242D;
+    background-color: $background-color;
     color: #efefef;
     display: flex;
     min-height: 100vh;
@@ -37,6 +42,7 @@ h1, h2, h3, h4, h5, h6 {
 
 a:hover { text-decoration: none; color: rgba(255, 255, 255, 0.9); }
 
+.modal-header,
 .header {
     color: $primary-color;
     font-weight: 300;
@@ -110,6 +116,12 @@ a {
     li {
         list-style-type: circle;
     }
+}
+
+.modal .modal-footer {
+  background-color: $footer-color;
+  border-top: 1px solid #2F3E47;
+  color: $secondary-color;
 }
 
 footer {

@@ -129,10 +129,11 @@ angular.module('app').controller("PluginController", ["$scope", "Kong", "$locati
             if (attrs.type === 'table') {
                 if (attrs.schema.flexible) {
                     angular.forEach(obj[key], function(value, sub_key) {
+                      /*
                         if(typeof(value)!=='object'){
                           delete obj[key][sub_key];
                           return;
-                        }
+                        }//*/
                         beforeSave(obj[key][sub_key], schema[key].schema.fields)
                     });
                 } else {
@@ -161,6 +162,7 @@ angular.module('app').controller("PluginController", ["$scope", "Kong", "$locati
      * @param schema
      */
     function afterFind(obj, schema) {
+console.log('afterFind', obj, schema)
         angular.forEach(obj, function(value, key) {
             if (angular.equals(value, {}) && schema[key].type === 'array') {
                 obj[key] = [];
@@ -173,5 +175,6 @@ angular.module('app').controller("PluginController", ["$scope", "Kong", "$locati
                 afterFind(obj[key], schema[key].schema.fields);
             }
         });
+console.log('afterFind.output', obj)
     }
 }]);
